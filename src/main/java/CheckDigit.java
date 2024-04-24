@@ -7,7 +7,14 @@ public class CheckDigit
    */  
    public static int getCheck(int num) 
    {  
-     /* to be implemented in part (a) */
+     int x = 0;
+     int y = (int) (7 - Math.log10(num));
+     while (num > 0){
+       x += y * num % 10;
+       num /= 10;
+       y++;
+     }
+     return x % 10;
    }
  
   /** Returns true if numWithCheckDigit is valid, or false    
@@ -18,7 +25,7 @@ public class CheckDigit
    */     
    public static boolean isValid(int numWithCheckDigit)    
    {      
-     /* to be implemented in part (b) */    
+     return numWithCheckDigit % 10 == getCheck(numWithCheckDigit/10);    
    }    
    
    /** Returns the number of digits in num. */    
