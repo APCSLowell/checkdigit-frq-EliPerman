@@ -8,7 +8,7 @@ public class CheckDigit
    public static int getCheck(int num) 
    {  
      int x = 0;
-     int y = (int) (7 - Math.log10(num));
+     int y = (int) (8 - Math.log10(num));
      while (num > 0){
        x += y * num % 10;
        num /= 10;
